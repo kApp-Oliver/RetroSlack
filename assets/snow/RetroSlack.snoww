@@ -1,0 +1,23 @@
+{
+  "viewport_scale": 2.0,
+  "rom_path": "../../ROMS/Mac-Plus-128k.ROM",
+  "model": "Plus",
+  "init_args": {
+    "override_fdd_type": "SuperDrive",
+    "start_fastforward": true
+  },
+  "scsi_targets": [
+    "None",
+    "None",
+    "None",
+    "None",
+    "None",
+    "None",
+    {
+      "Disk": "../disks/System701-Boot.hda"
+    }
+  ],
+  "floppy_images": [
+    "../../build/mac/RetroSlack.dsk"
+  ]
+}

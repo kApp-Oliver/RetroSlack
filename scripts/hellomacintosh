@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Thin wrapper: RetroSlack guest deploy uses the HelloMacintosh CLI.
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+HM="$("$ROOT/scripts/hello-macintosh-dir.sh")"
+export RETRO68="${RETRO68:-$ROOT/deps/Retro68-build/toolchain}"
+exec "$HM/scripts/hellomacintosh" "$@"

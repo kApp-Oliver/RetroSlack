@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Host NSE",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build-host.sh",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Test Protocol",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/host/test_rhttp_codec",
+      "dependsOn": "Build Host NSE",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Mac",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build-mac.sh",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Make Disk",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/make-disk.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Stack (NSE + Snow)",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run.sh",
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Tail Guest Log Hint",
+      "type": "shell",
+      "command": "echo 'Enable Snow printer-port TCP bridge, then: nc 127.0.0.1 1985'",
+      "problemMatcher": []
+    },
+    {
+      "label": "Bootstrap",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/bootstrap.sh",
+      "problemMatcher": []
+    }
+  ]
+}

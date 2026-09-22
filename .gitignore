@@ -1,0 +1,83 @@
+# HelloMacintosh is a separate repo — clone via `make bootstrap` or:
+#   git clone https://github.com/kApp-Oliver/HelloMacintosh.git HelloMacintosh
+# Not vendored here (not a submodule unless you add one locally).
+/HelloMacintosh/
+
+# Local write-ups, not published yet
+/tutorials/
+
+# Extra secret / key material — never commit
+*.pem
+*.p12
+*.p8
+*.key
+id_rsa
+id_ed25519
+auth.json
+credentials.json
+*.secret
+
+# Apple ROM / System images — never commit
+ROMS/**
+!ROMS/.gitkeep
+*.ROM
+*.rom
+*.toast
+*.dsk
+*.img
+*.hda
+*.hfv
+*.cdr
+assets/disks/**
+!assets/disks/.gitkeep
+
+# Secrets
+.env
+.env.*
+!.env.example
+arduino/nse/secrets.h
+**/secrets.h
+
+# Build artifacts
+build/
+deps/
+.pio/
+.vscode/.browse.c_cpp.db*
+compile_commands.json
+
+# Host / Mac binaries
+host/nse/nse
+*.o
+*.a
+*.flt
+*.flt.gdb
+*.bin
+*.APPL
+*.code.bin
+*.rsrc.bin
+*.ad
+*.hex
+*.elf
+*.dSYM/
+
+# macOS
+.DS_Store
+**/.DS_Store
+._*
+
+# IDE / local
+*.swp
+*~
+.idea/
+.cache/
+
+# System install media (user-supplied, do not commit)
+*.sit
+*.SIT
+assets/disks/macos701/
+assets/disks/MacOS701.sit
+assets/disks/*.img
+assets/disks/*System*
+assets/disks/*MacOS*
+!assets/disks/.gitkeep
+ROMS/Mac-Plus-128k.ROM

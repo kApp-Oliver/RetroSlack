@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug NSE",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/host/nse",
+      "args": ["--serial", "tcp://127.0.0.1:1984", "--verbose"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "SLACK_BOT_TOKEN": "${env:SLACK_BOT_TOKEN}"
+      },
+      "preLaunchTask": "Build Host NSE"
+    },
+    {
+      "name": "Debug NSE (attach)",
+      "type": "lldb",
+      "request": "attach",
+      "program": "${workspaceFolder}/build/host/nse"
+    }
+  ]
+}
